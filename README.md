@@ -1,6 +1,6 @@
-# Trade Classification of Financial Assets
+# Trade Classification of Exxon Mobil
 
-<img width="850" height="450" alt="Screenshot 2026-05-26 190908" src="https://github.com/user-attachments/assets/0eb35193-78b3-43dc-8fb1-254b56a5637e" />
+<img width="2000" height="1050" alt="exxonmobil-cut-jobs" src="https://github.com/user-attachments/assets/198897cb-8c8c-4927-a405-5e17fd51371f" />
 
 
 
