@@ -1,4 +1,4 @@
-# Trade Classification of Exxon Mobil
+# Trade Classification of ExxonMobil
 
 <img width="2000" height="1050" alt="exxonmobil-cut-jobs" src="https://github.com/user-attachments/assets/198897cb-8c8c-4927-a405-5e17fd51371f" />
 
