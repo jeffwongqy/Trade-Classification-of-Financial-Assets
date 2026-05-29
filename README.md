@@ -18,6 +18,31 @@ This project applies the Lee-Ready framework to historical daily data for ExxonM
 ## 3. Trade Labelling - Lee and Ready Algorithm 
 
 
+
+
+
+
+```` python
+def tick_test_algo(row):
+  if row['price_diff'] > 0:
+    return 1
+  elif row['price_diff'] < 0:
+    return 0
+  else:
+    return np.nan
+
+def quote_rule_algo(row):
+  if row['close'] > row['midpoint']:
+    return 1
+  elif row['close'] < row['midpoint']:
+    return -1
+  else:
+    return tick_test_algo(row)
+
+df2['target'] = df2.apply(quote_rule_algo, axis = 1)
+
+````
+
 ## 4. Feature Engineering 
 
 
