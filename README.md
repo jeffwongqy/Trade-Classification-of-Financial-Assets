@@ -127,18 +127,28 @@ The best estimators are `{'max_depth': 8, 'min_samples_leaf': 4, 'min_samples_sp
 The best score for the best estimators is `0.8099999999999999`.
 
 ## 7. Model Evaluation 
+Based on the model evaluation metrics, here is a summary of the performance for the trade classification model:
 
+- The model performs well on both datasets, achieving 84% accuracy on the unseen test set compared to 91% accuract on the training set.
+- The minor drop in accuracy and ROC score from train to test indicates that the Random Forest model generalizes well and has not heavily overfit the historical data.
+- The exceptionally high ROC scores prove that the model is highly effective at separating the underlying probabilities of a Buy versus a Sell signal.
 
 
 ## 8. Future Work 
-
+Future work will integrate advanced deep learning models such as LSTMs or Transformers, alongside sentiment analysis of financial news, to capture non-linear temporal relationships and improve classification robustness in volatile markets. 
 
 
 ## 9. Conclusion 
-
+The model successfully predicts ExxonMobil trade direction with 84% test accuracy using Lee-Ready labels and Random Forest classification. 
 
 
 ## 10. Libraries 
+- pandas
+- numpy
+- sklearn
+- matplotlib
+- seaborn
+- yfinance
 
 
 
