@@ -92,6 +92,8 @@ grid_search.fit(X_train, y_train)
 
 
 ````
+The best estimators are `{'max_depth': 8, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 70}`.
+The best score for the best estimators is `0.8099999999999999`.
 
 ## 7. Model Evaluation 
 
