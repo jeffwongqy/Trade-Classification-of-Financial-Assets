@@ -64,6 +64,34 @@ The Random Forest Classifier was selected because it is effective in modeling co
 ### 6.1 Hyperparameter Tuning and Model Training
 To improve model performance, hyperparameter tuning was performed using GridSearchCV with TimeSeriesSplit cross-validation, which preserves the chronological order of time-series and prevents future data leakage. The tuning process evaluated different combinations of key parameters, including the number of trees (n_estimators = 50 to 100), maximum tree depth (max_depth = 8 to 10), minimum samples required at leaf nodes (min_samples_leaf = 1 to 5), and minimum samples required for node splitting (min_samples_split = 2 to 5). Model performance was evaluated using negative mean squared error, and the parameter combination with the best validation performance was selected as the final optimized Random Forest model.
 
+````python
+# initialize the base random forest regressor
+rfr = RandomForestClassifier(random_state = 42)
+
+# define the hyperparameter grid
+param_grid = {'n_estimators': [50, 60, 70, 80, 90, 100],
+              'max_depth': [8, 9, 10],
+              'min_samples_leaf': [1, 2, 3, 4, 5],
+              'min_samples_split': [2, 3, 4, 5]}
+
+# set up time series split
+tscv = TimeSeriesSplit(n_splits = 5)
+
+# set up the grid search cross-validation configuration
+grid_search = GridSearchCV(estimator = rfr,
+                           param_grid = param_grid,
+                           cv = tscv,
+                           n_jobs = 1,
+                           verbose = 3,
+                           scoring = 'accuracy',
+                           return_train_score = True,
+                           refit = True)
+
+# execute the search over all parameter combination
+grid_search.fit(X_train, y_train)
+
+
+````
 
 ## 7. Model Evaluation 
 
