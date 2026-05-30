@@ -71,7 +71,22 @@ df2 = df2.dropna()
 ````
 
 ## 5. Split Data 
+This step partitions the engineered features and Lee-Ready target labels into independent datasets for sequential model training and validation.
 
+1. `X = df2[['open_close_diff', 'high_low_diff', 'volume_change']]`: Isolates the independent variables into a feature matrix used by the model to find predictive patterns.
+2. `y = df2['target']`: Extracts the dependent variable vector containing the Lee-Ready trade classification labels the model aims to predict.
+3. `X_train, X_test, y_train, y_test = train_test_split(...)`: allocates exactly 20% of the data for model evaluation, leaving the remaining 80% for training; preserves chronological order to prevent data leakage, ensuring the model trains on the past to predict the future.
+
+````python
+X = df2[['open_close_diff', 'high_low_diff', 'volume_change']]
+y = df2['target']
+
+X_train, X_test, y_train, y_test = train_test_split(X,
+                                                    y,
+                                                    test_size = 0.2,
+                                                    shuffle = False)
+
+````
 
 ## 6. Random Forest Classifier
 The Random Forest Classifier was selected because it is effective in modeling complex nonlinear relationships and interactions between engineered features without requiring strong statistical assumptions. Its ensemble structure combines multiple decision trees, improving prediction stability and reducing overfitting compared to a single decision tree.
